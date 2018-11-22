@@ -42,6 +42,8 @@ public class Main {
 		comentarios.setDataComentario(Date.valueOf("2018-03-09"));
 		cDAO.inserirComentarios(comentarios);
 		
+		System.out.println("sera que comitou");
+		
 		
 	}
 	
