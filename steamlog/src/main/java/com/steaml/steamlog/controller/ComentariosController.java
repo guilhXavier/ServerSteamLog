@@ -51,7 +51,7 @@ public class ComentariosController {
 		cDAO = new ComentariosDAO();
 		Comentarios comentarios = cDAO.buscarComentariosporID(id);
 		if(comentarios!=null) {
-			return new ResponseEntity<Comentarios>(comentarios, HttpStatus.FOUND);
+			return new ResponseEntity<Comentarios>(comentarios, HttpStatus.OK);
 		}		
 		return new ResponseEntity<Comentarios>(HttpStatus.NOT_FOUND);
 	}

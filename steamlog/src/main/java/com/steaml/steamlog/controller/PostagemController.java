@@ -59,7 +59,7 @@ public class PostagemController {
 		poDAO = new PostagemDAO();
 		Postagem postagem = poDAO.buscarPostagemPorId(id);
 		if(postagem!=null) {
-			return new ResponseEntity<Postagem>(postagem, HttpStatus.FOUND);
+			return new ResponseEntity<Postagem>(postagem, HttpStatus.OK);
 		}		
 		return new ResponseEntity<Postagem>(HttpStatus.NOT_FOUND);
 	}

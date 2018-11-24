@@ -34,6 +34,7 @@ public class UsuarioController {
 	@PutMapping(value = "")
 	public ResponseEntity<Void> editar(@RequestBody Usuario usuario) {
 		uDAO = new UsuarioDAO();
+		System.out.println(usuario.getNumJogos());
 		uDAO.editar(usuario);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
@@ -60,7 +61,7 @@ public class UsuarioController {
 		System.out.println(id);
 		Usuario usuario = uDAO.buscarPorId(id);
 		if(usuario!=null) {
-			return new ResponseEntity<Usuario>(usuario, HttpStatus.FOUND);
+			return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
 		}		
 		return new ResponseEntity<Usuario>(HttpStatus.NOT_FOUND);
 	}
@@ -70,8 +71,9 @@ public class UsuarioController {
 		uDAO = new UsuarioDAO();
 		System.out.println(nickname);
 		Usuario usuario = uDAO.buscarPorNicknameESenha(nickname, senha);
+		System.out.println(usuario.getNumJogos());
 		if(usuario!=null) {
-			return new ResponseEntity<Usuario>(usuario, HttpStatus.FOUND);
+			return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
 		}		
 		return new ResponseEntity<Usuario>(HttpStatus.NOT_FOUND);
 	}

@@ -3,7 +3,7 @@ package com.steaml.steamlog.persistencia;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import com.mysql.jdbc.Connection;
+import java.sql.Connection;
 
 public class ConexaoMysql {
 	// atributos da classe
@@ -72,7 +72,7 @@ public class ConexaoMysql {
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String endereco = "jdbc:mysql://"+this.ip+":3306/"+this.nomeBD;
+			String endereco = "jdbc:mysql://"+this.ip+":3306/"+this.nomeBD+"?useTimezone=true&serverTimezone=UTC&autoReconnect=true&useSSL=false";
 			this.conexao = (Connection) DriverManager.getConnection(endereco, this.login, this.senha);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

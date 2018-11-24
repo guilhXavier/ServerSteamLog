@@ -47,7 +47,7 @@ public class ImagensController {
 		iDAO = new ImagensDAO();
 		Imagens imagens = iDAO.buscarImagemPorId(id);
 		if(imagens!=null) {
-			return new ResponseEntity<Imagens>(imagens, HttpStatus.FOUND);
+			return new ResponseEntity<Imagens>(imagens, HttpStatus.OK);
 		}		
 		return new ResponseEntity<Imagens>(HttpStatus.NOT_FOUND);
 	}

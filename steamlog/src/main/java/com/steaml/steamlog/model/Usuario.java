@@ -7,7 +7,7 @@ public class Usuario {
 	private String email;
 	private String nickname;
 	private String senha;
-	private int steamid;
+	private long steamid;
 	private String fotoPerfil;
 	private int numJogos;
 	private int numConquistas;
@@ -68,11 +68,11 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public int getSteamid() {
+	public long getSteamid() {
 		return steamid;
 	}
 
-	public void setSteamid(int steamid) {
+	public void setSteamid(long steamid) {
 		this.steamid = steamid;
 	}
 
