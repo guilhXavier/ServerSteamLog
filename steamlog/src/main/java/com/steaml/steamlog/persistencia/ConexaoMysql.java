@@ -71,7 +71,7 @@ public class ConexaoMysql {
 	public void abrirConexao() {
 
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			String endereco = "jdbc:mysql://"+this.ip+":3306/"+this.nomeBD+"?useTimezone=true&serverTimezone=UTC&autoReconnect=true&useSSL=false";
 			this.conexao = (Connection) DriverManager.getConnection(endereco, this.login, this.senha);
 		} catch (ClassNotFoundException e) {

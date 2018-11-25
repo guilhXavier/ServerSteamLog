@@ -1,18 +1,18 @@
 package com.steaml.steamlog.controller;
 
+import java.util.ArrayList;
 import java.util.List;
-
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.steaml.steamlog.model.Usuario;
 import com.steaml.steamlog.persistencia.UsuarioDAO;
@@ -76,6 +76,14 @@ public class UsuarioController {
 			return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
 		}		
 		return new ResponseEntity<Usuario>(HttpStatus.NOT_FOUND);
+	}
+	
+	@GetMapping(value = "ranking")
+	public ResponseEntity<List<Usuario>>buscarRanking(){
+		uDAO = new UsuarioDAO();
+		System.out.println("Foi");
+		ArrayList<Usuario>listRanking = uDAO.RankingJogos();
+		return new ResponseEntity<List<Usuario>>(listRanking, HttpStatus.OK);
 	}
 	
 	

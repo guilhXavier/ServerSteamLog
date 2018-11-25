@@ -10,4 +10,4 @@ public class SteamlogApplication{
 	public static void main(String[] args) {
 		SpringApplication.run(SteamlogApplication.class, args);
 	}
-}
+}	

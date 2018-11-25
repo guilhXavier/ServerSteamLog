@@ -195,5 +195,36 @@ public class UsuarioDAO {
 			}
 			return usuario;
 		}
+		
+		public ArrayList<Usuario>RankingJogos(){
+			
+			this.conexao.abrirConexao();
+			String sql = "SELECT * FROM usuario ORDER BY num_jogos DESC";
+			PreparedStatement statement;
+			Usuario usuario = null;
+			ArrayList<Usuario> listaRanking = new ArrayList<Usuario>();
+			try {
+				statement = this.conexao.getConexao().prepareStatement(sql);
+				ResultSet rs = statement.executeQuery();
+				while(rs.next()){
+					usuario = new Usuario();
+					usuario.setIdUsuario(rs.getLong("id_usuario"));
+					usuario.setEmail(rs.getString("email"));
+					usuario.setNickname(rs.getString("nickname"));
+					usuario.setSenha(rs.getString("senha"));
+					usuario.setSteamid(rs.getLong("steamid"));
+					usuario.setNumJogos(rs.getShort("num_jogos"));
+					listaRanking.add(usuario);
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+				this.conexao.fecharConexao();
+			}
+			
+			return listaRanking;
+			
+		}
 
 }
