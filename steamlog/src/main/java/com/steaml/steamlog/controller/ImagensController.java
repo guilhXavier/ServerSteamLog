@@ -15,7 +15,7 @@ import com.steaml.steamlog.persistencia.ImagensDAO;
 
 
 @Controller    
-@RequestMapping(path="/imagens/") 
+@RequestMapping(path="/imagens/") //Comentario para commit
 public class ImagensController {
 	
 	private ImagensDAO iDAO;

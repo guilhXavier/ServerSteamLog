@@ -83,7 +83,7 @@ public class UsuarioController {
 		uDAO = new UsuarioDAO();
 		System.out.println("Foi");
 		ArrayList<Usuario>listRanking = uDAO.RankingJogos();
-		return new ResponseEntity<List<Usuario>>(listRanking, HttpStatus.OK);
+		return new ResponseEntity<List<Usuario>>(listRanking, HttpStatus.OK);  //Cometario para commit
 	}
 	
 	

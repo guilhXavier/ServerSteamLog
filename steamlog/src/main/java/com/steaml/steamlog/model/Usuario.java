@@ -2,7 +2,7 @@ package com.steaml.steamlog.model;
 
 import java.util.ArrayList;
 
-public class Usuario {
+public class Usuario {  //Comentario para commit
 	private long idUsuario;
 	private String email;
 	private String nickname;

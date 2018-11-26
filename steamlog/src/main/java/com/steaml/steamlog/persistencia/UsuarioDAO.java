@@ -16,7 +16,7 @@ public class UsuarioDAO {
 
 	public UsuarioDAO() {
 		super();
-		this.conexao = new ConexaoMysql("localhost", "root", "BDGustavo", "projetointegrador");
+		this.conexao = new ConexaoMysql("localhost", "root", " ", "projetointegrador");
 	}
 
 	// INSERT INTO usuario VALUES(null, 'Rodrigo', 'remor', '123');
@@ -25,7 +25,7 @@ public class UsuarioDAO {
 		this.conexao.abrirConexao();
 		// SQL COM A OPERA��O QUE DESEJA-SE REALIZAR
 		//email,nickname,senha,steamid,foto_perfil,num_jogos,num_conquistas,id_imagem
-		String sqlInsert = "INSERT INTO Usuario VALUES(null, ?, ?, ?, ?, null, null, null, ?);";
+		String sqlInsert = "INSERT INTO Usuario VALUES(null, ?, ?, ?, ?, null, ?, null, ?);";
 		try {
 			// DECLARA E INICIALIZA UM STATEMENT, OBJETO USADO PARA PREPARAR O
 			// SQL � SER EXECUTADO
@@ -36,7 +36,8 @@ public class UsuarioDAO {
 			statement.setString(2, usuario.getNickname());
 			statement.setString(3, usuario.getSenha());
 			statement.setLong(4, usuario.getSteamid());
-			statement.setLong(5,usuario.getImagens().getIdImagem());
+			statement.setInt(5, usuario.getNumJogos());
+			statement.setLong(6,usuario.getImagens().getIdImagem());
 			// EXECUTAR A INSTRU��O NO BANCO
 			statement.executeUpdate();
 			ResultSet rs = statement.getGeneratedKeys();

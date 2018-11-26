@@ -11,7 +11,7 @@ import com.steaml.steamlog.model.*;
 
 public class PostagemDAO {
 
-	private ConexaoMysql conexao;
+	private ConexaoMysql conexao; //comentario pra commit
 
 	public PostagemDAO() {
 		super();

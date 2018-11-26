@@ -15,7 +15,7 @@ public class ComentariosDAO {
 
 	public ComentariosDAO() {
 		super();
-		this.conexao = new ConexaoMysql("localhost", "root", "", "projetointegrador");
+		this.conexao = new ConexaoMysql("localhost", "root", " ", "projetointegrador");
 	}
 
 	// INSERT INTO comentarios VALUES(null,corpo_comentario,data_comentario);
