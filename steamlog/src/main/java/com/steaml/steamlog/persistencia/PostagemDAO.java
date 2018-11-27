@@ -15,7 +15,7 @@ public class PostagemDAO {
 
 	public PostagemDAO() {
 		super();
-		this.conexao = new ConexaoMysql("localhost", "root", "", "projetointegrador");
+		this.conexao = new ConexaoMysql("localhost", "root", "BDGustavo", "projetointegrador");
 	}
 
 	// INSERT INTO Postagem VALUES(null, "postagem", data);

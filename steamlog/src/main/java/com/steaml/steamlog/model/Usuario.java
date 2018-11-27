@@ -13,14 +13,14 @@ public class Usuario {  //Comentario para commit
 	private int numConquistas;
 	private Imagens imagens;
 	private ArrayList<Post>listPost;
-	private ArrayList<Ranking>listrankings ; 
+
 	
 	
 	public Usuario() {
 		
 	}
 	
-	public Usuario(long idUsuario, String email, String nickname, String senha, int steamid, String fotoPerfil,int numJogos, int numConquistas, Imagens imagens, ArrayList<Post> listPost, ArrayList<Ranking> listrankings) {
+	public Usuario(long idUsuario, String email, String nickname, String senha, int steamid, String fotoPerfil,int numJogos, int numConquistas, Imagens imagens, ArrayList<Post> listPost) {
 		super();
 		this.idUsuario = idUsuario;
 		this.email = email;
@@ -32,7 +32,6 @@ public class Usuario {  //Comentario para commit
 		this.numConquistas = numConquistas;
 		this.imagens = imagens;
 		this.listPost = listPost;
-		this.listrankings = listrankings;
 	}
 
 	
@@ -116,13 +115,7 @@ public class Usuario {  //Comentario para commit
 		this.listPost = listPost;
 	}
 
-	public ArrayList<Ranking> getListrankings() {
-		return listrankings;
-	}
 
-	public void setListrankings(ArrayList<Ranking> listrankings) {
-		this.listrankings = listrankings;
-	}
 	
 
 }
