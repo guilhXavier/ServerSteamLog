@@ -15,7 +15,7 @@ public class ImagensDAO {
 
 	public ImagensDAO() {
 		super();
-		this.conexao = new ConexaoMysql("localhost", "root", " ", "projetointegrador");
+		this.conexao = new ConexaoMysql("localhost", "root", "", "projetointegrador");
 	}
 
 	// INSERT INTO Imagens VALUES(null, 1, 'endereco');

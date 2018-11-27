@@ -16,7 +16,7 @@ public class UsuarioDAO {
 
 	public UsuarioDAO() {
 		super();
-		this.conexao = new ConexaoMysql("localhost", "root", " ", "projetointegrador");
+		this.conexao = new ConexaoMysql("localhost", "root", "", "projetointegrador");
 	}
 
 	// INSERT INTO usuario VALUES(null, 'Rodrigo', 'remor', '123');

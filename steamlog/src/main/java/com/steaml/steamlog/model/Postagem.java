@@ -6,6 +6,7 @@ import java.sql.Date;
 public class Postagem {
 	
 	private long idPostagem;
+	private String tituloPostagem;
 	private String descPostagem;
 	private Date dataPostagem;
 	private ArrayList<ImagemPostagem>listImagens;
@@ -14,15 +15,26 @@ public class Postagem {
 	
 	public Postagem() {}
 
-	public Postagem(long idPostagem, String descPostagem, Date dataPostagem, ArrayList<ImagemPostagem> listImagens,
+	public Postagem(long idPostagem,String tituloPostagem, String descPostagem, Date dataPostagem, ArrayList<ImagemPostagem> listImagens,
 			ArrayList<Comentarios> listComentarios, ArrayList<Post> listPost) {
 		super();
+		this.tituloPostagem = tituloPostagem;
 		this.idPostagem = idPostagem;
 		this.descPostagem = descPostagem;
 		this.dataPostagem = dataPostagem;
 		this.listImagens = listImagens;
 		this.listComentarios = listComentarios;
 		this.listPost = listPost;
+	}
+	
+	
+
+	public String getTituloPostagem() {
+		return tituloPostagem;
+	}
+
+	public void setTituloPostagem(String tituloPostagem) {
+		this.tituloPostagem = tituloPostagem;
 	}
 
 	public long getIdPostagem() {

@@ -1,16 +1,17 @@
 package com.steaml.steamlog.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.steaml.steamlog.model.Postagem;
@@ -46,11 +47,12 @@ public class PostagemController {
 	
 	
 	@GetMapping(value = "")
-    public ResponseEntity<List<Postagem>> listaTodosUsuarios() {
+    public ResponseEntity<ArrayList<Postagem>> listaTodosUsuarios() {
 		System.out.println("Testando");
 		poDAO = new PostagemDAO();
-		List<Postagem> listaPostagem = poDAO.buscarTodasPostagens();
-		return new ResponseEntity<List<Postagem>>(listaPostagem, HttpStatus.OK);
+		ArrayList<Postagem> listaPostagem = poDAO.buscarTodasPostagens();
+		System.out.println("foi");
+		return new ResponseEntity<ArrayList<Postagem>>(listaPostagem, HttpStatus.OK);
 		
 	}
 	

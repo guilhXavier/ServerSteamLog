@@ -23,7 +23,7 @@ public class PostagemDAO {
 		// ABRIR A CONEX�O COM O BANCO
 		this.conexao.abrirConexao();
 		// SQL COM A OPERA��O QUE DESEJA-SE REALIZAR
-		String sqlInsert = "INSERT INTO Postagem VALUES(null, ?, ?);";
+		String sqlInsert = "INSERT INTO Postagem VALUES(null, ?, ?, null);";
 		try {
 			// DECLARA E INICIALIZA UM STATEMENT, OBJETO USADO PARA PREPARAR O
 			// SQL � SER EXECUTADO
@@ -31,8 +31,8 @@ public class PostagemDAO {
 					Statement.RETURN_GENERATED_KEYS);
 			// SUBSTITUIR AS INTERROGA��ES PELOS VALORES QUE EST�O NO OBJETO
 			// USU�RIO
-			statement.setString(1, postagem.getDescPostagem());
-			statement.setDate(2, postagem.getDataPostagem());
+			statement.setString(1, postagem.getTituloPostagem());
+			statement.setString(2, postagem.getDescPostagem());
 			// EXECUTAR A INSTRU��O NO BANCO
 			statement.executeUpdate();
 			ResultSet rs = statement.getGeneratedKeys();
@@ -92,14 +92,14 @@ public class PostagemDAO {
 	}
 
 	// SELECT * FROM Postagem;
-	public List<Postagem> buscarTodasPostagens() {
+	public ArrayList<Postagem> buscarTodasPostagens() {
 		// ABRIR A CONEXÃO COM O BANCO
 		this.conexao.abrirConexao();
 		// SQL COM A OPERAÇÃO QUE DESEJA-SE REALIZAR
 		String sqlSelect = "SELECT * FROM Postagem;";
 		PreparedStatement statement;
 		Postagem postagem = null;
-		List<Postagem> listaPostagens = new ArrayList<Postagem>();
+		ArrayList <Postagem> listaPostagens = new ArrayList<Postagem>();
 		try {
 			statement = this.conexao.getConexao().prepareStatement(sqlSelect);
 			ResultSet rs = statement.executeQuery();
@@ -107,9 +107,10 @@ public class PostagemDAO {
 			while (rs.next()) {
 				// Converter um objeto ResultSet em um objeto Postagem
 				postagem = new Postagem();
-				postagem.setIdPostagem(rs.getLong("id_postagemagem"));
-				postagem.setDescPostagem(rs.getString("descricao_postagem"));
-				postagem.setDataPostagem(rs.getDate("arquivo_imagem"));
+				postagem.setIdPostagem(rs.getLong("id_postagem"));
+				postagem.setTituloPostagem(rs.getString("titulo_postagem"));
+				postagem.setDescPostagem(rs.getString("desc_postagem"));
+				postagem.setDataPostagem(rs.getDate("data_postagem"));
 				listaPostagens.add(postagem);
 			}
 		} catch (SQLException e) {
