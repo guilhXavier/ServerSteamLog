@@ -15,7 +15,7 @@ public class PostDAO {
 
 	public PostDAO() {
 		super();
-		this.conexao = new ConexaoMysql("localhost", "root", "BDGustavo", "projetointegrador");
+		this.conexao = new ConexaoMysql("localhost", "root", "", "projetointegrador");
 	}
 	
 	public Post inserirPost(Post post) {
