@@ -69,9 +69,9 @@ public class UsuarioController {
 	@GetMapping(value = "{nickname}/{senha}")
 	public ResponseEntity<Usuario> buscarPorLoginESenha(@RequestParam String nickname, @RequestParam String senha) {
 		uDAO = new UsuarioDAO();
-		System.out.println(nickname);
+
 		Usuario usuario = uDAO.buscarPorNicknameESenha(nickname, senha);
-		System.out.println(usuario.getNumJogos());
+
 		if(usuario!=null) {
 			return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
 		}		

@@ -166,7 +166,7 @@ public class UsuarioDAO {
 			// ABRIR A CONEXÃO COM O BANCO
 			this.conexao.abrirConexao();
 			// SQL COM A OPERAÇÃO QUE DESEJA-SE REALIZAR
-			String sqlInsert = "SELECT * FROM Usuario INNER JOIN Imagens ON Usuario.id_imagem = Imagens.id_imagem WHERE nickname=? AND senha=?;";
+			String sqlInsert = "SELECT * FROM Usuario INNER JOIN Imagens ON Usuario.id_imagem_u = Imagens.id_imagem WHERE nickname=? AND senha=?;";
 			PreparedStatement statement;
 			Usuario usuario = null;
 			Imagens imagens = null;
