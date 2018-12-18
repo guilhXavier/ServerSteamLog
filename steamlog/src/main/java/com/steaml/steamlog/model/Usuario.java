@@ -8,10 +8,8 @@ public class Usuario {  //Comentario para commit
 	private String nickname;
 	private String senha;
 	private long steamid;
-	private String fotoPerfil;
+	private String refFotoPerfil;
 	private int numJogos;
-	private int numConquistas;
-	private Imagens imagens;
 	private ArrayList<Post>listPost;
 
 	
@@ -20,17 +18,15 @@ public class Usuario {  //Comentario para commit
 		
 	}
 	
-	public Usuario(long idUsuario, String email, String nickname, String senha, int steamid, String fotoPerfil,int numJogos, int numConquistas, Imagens imagens, ArrayList<Post> listPost) {
+	public Usuario(long idUsuario, String email, String nickname, String senha, int steamid, String refFotoPerfil, int numJogos, ArrayList<Post> listPost) {
 		super();
 		this.idUsuario = idUsuario;
 		this.email = email;
 		this.nickname = nickname;
 		this.senha = senha;
 		this.steamid = steamid;
-		this.fotoPerfil = fotoPerfil;
+		this.refFotoPerfil = refFotoPerfil;
 		this.numJogos = numJogos;
-		this.numConquistas = numConquistas;
-		this.imagens = imagens;
 		this.listPost = listPost;
 	}
 
@@ -75,12 +71,12 @@ public class Usuario {  //Comentario para commit
 		this.steamid = steamid;
 	}
 
-	public String getFotoPerfil() {
-		return fotoPerfil;
+	public String getRefFotoPerfil() {
+		return refFotoPerfil;
 	}
 
-	public void setFotoPerfil(String fotoPerfil) {
-		this.fotoPerfil = fotoPerfil;
+	public void setRefFotoPerfil(String refFotoPerfil) {
+		this.refFotoPerfil = refFotoPerfil;
 	}
 
 	public int getNumJogos() {
@@ -89,22 +85,6 @@ public class Usuario {  //Comentario para commit
 
 	public void setNumJogos(int numJogos) {
 		this.numJogos = numJogos;
-	}
-
-	public int getNumConquistas() {
-		return numConquistas;
-	}
-
-	public void setNumConquistas(int numConquistas) {
-		this.numConquistas = numConquistas;
-	}
-
-	public Imagens getImagens() {
-		return this.imagens;
-	}
-
-	public void setImagens(Imagens imagens) {
-		this.imagens = imagens;
 	}
 
 	public ArrayList<Post> getListPost() {

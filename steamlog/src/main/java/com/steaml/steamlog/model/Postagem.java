@@ -9,20 +9,20 @@ public class Postagem {
 	private String tituloPostagem;
 	private String descPostagem;
 	private Date dataPostagem;
-	private ArrayList<ImagemPostagem>listImagens;
+	private String refFotoPostagem;
 	private ArrayList<Comentarios>listComentarios;
 	private ArrayList<Post>listPost;
 	
 	public Postagem() {}
 
-	public Postagem(long idPostagem,String tituloPostagem, String descPostagem, Date dataPostagem, ArrayList<ImagemPostagem> listImagens,
+	public Postagem(long idPostagem,String tituloPostagem, String descPostagem, Date dataPostagem, String refFotoPostagem,
 			ArrayList<Comentarios> listComentarios, ArrayList<Post> listPost) {
 		super();
 		this.tituloPostagem = tituloPostagem;
 		this.idPostagem = idPostagem;
 		this.descPostagem = descPostagem;
 		this.dataPostagem = dataPostagem;
-		this.listImagens = listImagens;
+		this.refFotoPostagem = refFotoPostagem;
 		this.listComentarios = listComentarios;
 		this.listPost = listPost;
 	}
@@ -61,13 +61,9 @@ public class Postagem {
 		this.dataPostagem = dataPostagem;
 	}
 
-	public ArrayList<ImagemPostagem> getListImagens() {
-		return listImagens;
-	}
+	public String getRefFotoPostagem() { return refFotoPostagem; }
 
-	public void setListImagens(ArrayList<ImagemPostagem> listImagens) {
-		this.listImagens = listImagens;
-	}
+	public void setRefFotoPostagem(String refFotoPostagem) { this.refFotoPostagem = refFotoPostagem; }
 
 	public ArrayList<Comentarios> getListComentarios() {
 		return listComentarios;
